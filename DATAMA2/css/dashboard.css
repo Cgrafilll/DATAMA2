@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Fallback to sans-serif if Montserrat fails to load */
+    color: #fff;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #FAF1E2;
+    font-family: 'Merriweather', serif; /* Fallback to serif if Merriweather fails to load */
+}
+
+.navbar {
+    background: #252643 !important;
+    height: 80px;
+    margin: 10px;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+}
+
+.button span {
+    color: #000;
+}
+
+.button:hover span {
+    color: transparent;
+}
+
+.button::before {
+    content: "Logout";
+    top: 100%;
+    position: absolute;
+    width: 100%;
+    transition: top 0.3s;
+}
+
+.button:hover::before {
+    top: 2px;
+}
+
+.button:hover {
+    background-color: #08D9D6;
+    color: #000;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+    background-color: #fff;
+}
+
+.navbar-toggler, .btn-close {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    position: relative; 
+    transition: 0.3s font-weight;
+}
+
+.offcanvas-title {
+    color: #000;
+}
+
+@media (min-width: 990px) {
+    .nav-link {
+        color: #fff;
+    }
+    .nav-link:hover {
+        color: #fff;
+    }
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #FAF1E2;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    .nav-link:hover::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
